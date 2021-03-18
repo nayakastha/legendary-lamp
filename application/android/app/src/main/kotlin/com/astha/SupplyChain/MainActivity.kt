@@ -1,4 +1,4 @@
-package com.example.application
+package com.astha.SupplyChain
 
 import io.flutter.embedding.android.FlutterActivity
 

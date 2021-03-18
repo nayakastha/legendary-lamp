@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "321819224779",
+    "project_id": "supplychain-2001",
+    "storage_bucket": "supplychain-2001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321819224779:android:0890f9c5e72f0f8e5cc94e",
+        "android_client_info": {
+          "package_name": "com.astha.SupplyChain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321819224779-0t0k1kl4j5hq328pv005j77o14qfqq8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAejvKAEkX4SdMm87TYXXr2SmAdFamKtCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321819224779-0t0k1kl4j5hq328pv005j77o14qfqq8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
