@@ -19,9 +19,10 @@ class SplashView extends HookWidget {
               children: [
                 Lottie.asset("assets/animations/splash.json",
                     controller: animationController, onLoaded: (composition) {
-                  animationController.addStatusListener((status) {
+                  animationController.addStatusListener((status) async {
+                    var route = await model.onAnimationCompleted();
                     if (status == AnimationStatus.completed) {
-                      model.onAnimationCompleted(context);
+                      Navigator.pushReplacementNamed(context, route);
                     }
                   });
                   animationController
@@ -31,7 +32,7 @@ class SplashView extends HookWidget {
                 SizedBox(
                     child: Center(
                   child: Text(model.title,
-                      style: TextStyle(color: secondaryColor, fontSize: 24)),
+                      style: TextStyle(color: secondaryColor, fontSize: 20)),
                 ))
               ],
             )),
