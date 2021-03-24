@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 
 class ChoiceViewModel extends BaseViewModel {
   String sellerRoute = '/homeseller';
-  String buyerRoute = '/homeseller';
+  String buyerRoute = '/homebuyer';
   String _sellerName = 'Manufacturer';
   String _buyerName = 'Customer';
 
@@ -20,12 +20,14 @@ class ChoiceViewModel extends BaseViewModel {
   chooseSeller(BuildContext context) async {
     SharedPreferences prefs = await prefInit();
     prefs.setString('usertype', _sellerName);
+    print(prefs.getString('usertype'));
     Navigator.pushReplacementNamed(context, sellerRoute);
   }
 
   chooseBuyer(BuildContext context) async {
     SharedPreferences prefs = await prefInit();
     prefs.setString('usertype', _buyerName);
+    print(prefs.getString('usertype'));
     Navigator.pushReplacementNamed(context, buyerRoute);
   }
 }

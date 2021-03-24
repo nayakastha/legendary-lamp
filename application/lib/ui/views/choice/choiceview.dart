@@ -6,7 +6,7 @@ import 'package:stacked/stacked.dart';
 class ChoiceView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.nonReactive(
+    return ViewModelBuilder.reactive(
         builder: (context, model, child) {
           return Scaffold(
             backgroundColor: bgColor,
@@ -26,10 +26,16 @@ class ChoiceView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      choiceCard(context, model.sellerName,
-                          "assets/images/shop.png", model.chooseSeller),
-                      choiceCard(context, model.buyerName,
-                          "assets/images/cart.png", model.chooseBuyer)
+                      choiceCard(
+                          context, model.sellerName, "assets/images/shop.png",
+                          () {
+                        model.chooseSeller(context);
+                      }),
+                      choiceCard(
+                          context, model.buyerName, "assets/images/cart.png",
+                          () {
+                        model.chooseBuyer(context);
+                      })
                     ],
                   ),
                 ],

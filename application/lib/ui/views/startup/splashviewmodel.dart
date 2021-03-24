@@ -9,13 +9,14 @@ class SplashViewModel extends BaseViewModel {
     Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
     final SharedPreferences prefs = await _prefs;
     prefs.getKeys();
+
     return prefs.getString('usertype');
   }
 
   onAnimationCompleted() async {
     String _userType = await prefinit();
     if (_userType == 'Customer') {
-      return '/homeseller';
+      return '/homebuyer';
     } else if (_userType == 'Manufacturer') {
       return '/homeseller';
     } else {

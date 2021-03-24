@@ -1,5 +1,7 @@
 import 'package:application/ui/views/choice/choiceview.dart';
-import 'package:application/ui/views/home/homeview.dart';
+import 'package:application/ui/views/customer/c_home/c_homeview.dart';
+import 'package:application/ui/views/manufacturer/m_home/m_homeview.dart';
+
 import 'package:application/ui/views/startup/splashview.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +21,8 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color.fromRGBO(255, 234, 230, 1)),
       routes: {
         '/choice': (context) => ChoiceView(),
-        '/homeseller': (context) => HomeView()
+        '/homebuyer': (context) => CustomerHomeView(),
+        '/homeseller': (context) => ManufacturerHomeView()
       },
       home: SplashView(),
     );
