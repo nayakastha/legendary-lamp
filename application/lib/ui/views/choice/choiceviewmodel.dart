@@ -10,6 +10,7 @@ class ChoiceViewModel extends BaseViewModel {
 
   String get buyerName => _buyerName;
   String get sellerName => _sellerName;
+
   Future<SharedPreferences> prefInit() async {
     Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
     final SharedPreferences prefs = await _prefs;

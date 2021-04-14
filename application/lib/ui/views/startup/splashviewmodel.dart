@@ -9,7 +9,6 @@ class SplashViewModel extends BaseViewModel {
     Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
     final SharedPreferences prefs = await _prefs;
     prefs.getKeys();
-
     return prefs.getString('usertype');
   }
 
