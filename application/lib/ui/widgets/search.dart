@@ -31,14 +31,30 @@ class _SearchButtonState extends State<SearchButton> {
             child: Container(
               padding: EdgeInsets.only(left: 16),
               child: !widget.model.folded
-                  ? TextField(
-                      textCapitalization: TextCapitalization.none,
-                      showCursor: true,
-                      decoration: InputDecoration(
-                          hintText: 'Search',
-                          isDense: true,
-                          hintStyle: TextStyle(color: secondaryColor),
-                          border: InputBorder.none),
+                  ? Row(
+                      children: [
+                        TextField(
+                          textCapitalization: TextCapitalization.none,
+                          showCursor: true,
+                          decoration: InputDecoration(
+                              hintText: 'Search',
+                              isDense: true,
+                              hintStyle: TextStyle(color: secondaryColor),
+                              border: InputBorder.none),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: InkWell(
+                            child: Icon(
+                              Icons.qr_code_scanner_rounded,
+                              color: secondaryColor,
+                            ),
+                            onTap: () {
+                              model.scanCamera();
+                            },
+                          ),
+                        ),
+                      ],
                     )
                   : Container(),
             ),
@@ -66,51 +82,3 @@ class _SearchButtonState extends State<SearchButton> {
     );
   }
 }
-
-/* Widget searchButton(CustomerHomeViewModel model) => AnimatedContainer(
-      curve: Curves.bounceOut,
-      duration: Duration(microseconds: 400),
-      width: model.folded ? 56 : 300,
-      height: 56,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(32),
-        color: primaryColor,
-        boxShadow: kElevationToShadow[6],
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.only(left: 16),
-              child: !model.folded
-                  ? TextField(
-                      textCapitalization: TextCapitalization.none,
-                      showCursor: true,
-                      decoration: InputDecoration(
-                          hintText: 'Search',
-                          isDense: true,
-                          hintStyle: TextStyle(color: secondaryColor),
-                          border: InputBorder.none),
-                    )
-                  : Container(),
-            ),
-          ),
-          AnimatedContainer(
-            duration: Duration(microseconds: 400),
-            curve: Curves.bounceIn,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: InkWell(
-                child: Icon(
-                  Icons.search,
-                  color: secondaryColor,
-                ),
-                onTap: () {
-                  model.fold(!model.folded);
-                },
-              ),
-            ),
-          )
-        ],
-      ),
-    ); */

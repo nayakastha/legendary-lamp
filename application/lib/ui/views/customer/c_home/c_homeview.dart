@@ -15,7 +15,14 @@ class _CustomerHomeViewState extends State<CustomerHomeView> {
         builder: (context, model, child) {
           return Scaffold(
             resizeToAvoidBottomInset: false,
-            body: Center(child: SearchButton(model)),
+            body: SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  SearchButton(model),
+                ],
+              ),
+            ),
           );
         },
         viewModelBuilder: () => CustomerHomeViewModel());
