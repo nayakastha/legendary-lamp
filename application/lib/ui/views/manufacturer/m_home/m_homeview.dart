@@ -1,6 +1,6 @@
-import 'package:application/ui/views/manufacturer/dashboard/dashboardview.dart';
+//import 'package:application/ui/views/manufacturer/dashboard/dashboardview.dart';
 import 'package:application/ui/views/manufacturer/m_home/m_homeviewmodel.dart';
-import 'package:application/ui/views/manufacturer/signup/loginview.dart';
+//import 'package:application/ui/views/manufacturer/signup/loginview.dart';
 import 'package:application/ui/views/manufacturer/signup/signupview.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';

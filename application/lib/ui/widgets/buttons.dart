@@ -7,12 +7,17 @@ Widget initialButton(String buttonText, Function onTap) {
     onPressed: onTap,
     style: ElevatedButton.styleFrom(
       primary: primaryColor,
+      shape: new RoundedRectangleBorder(
+        borderRadius:
+            new BorderRadius.circular(SizeConfig.blockSizeHorizontal * 6.25),
+      ),
     ),
     child: Text(
       buttonText,
       style: TextStyle(
+        fontWeight: FontWeight.bold,
         color: secondaryColor,
-        fontSize: SizeConfig.blockSizeHorizontal * 4,
+        fontSize: SizeConfig.blockSizeHorizontal * 5,
       ),
     ),
   );
