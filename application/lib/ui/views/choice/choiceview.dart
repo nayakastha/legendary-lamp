@@ -1,5 +1,5 @@
-import 'package:application/ui/constants.dart';
-import 'package:application/ui/ui_scaling.dart';
+import 'package:application/ui/utils/constants.dart';
+import 'package:application/ui/utils/ui_scaling.dart';
 import 'package:application/ui/views/choice/choiceviewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -7,6 +7,7 @@ import 'package:stacked/stacked.dart';
 class ChoiceView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return ViewModelBuilder.reactive(
         builder: (context, model, child) {
           return Scaffold(

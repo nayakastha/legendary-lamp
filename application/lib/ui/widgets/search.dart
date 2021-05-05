@@ -1,5 +1,5 @@
-import 'package:application/ui/constants.dart';
-import 'package:application/ui/ui_scaling.dart';
+import 'package:application/ui/utils/constants.dart';
+import 'package:application/ui/utils/ui_scaling.dart';
 import 'package:application/ui/views/customer/c_home/c_homeviewmodel.dart';
 import 'package:flutter/material.dart';
 

@@ -17,17 +17,17 @@ class _ManufacturerHomeViewState extends State<ManufacturerHomeView> {
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
       builder: (context, model, child) {
-        return FutureBuilder(
-          future: model.isLoggedIn(),
-          builder: (BuildContext context, AsyncSnapshot snapshot) {
-            if (snapshot.data == 0)
-              return SignUpView();
-            else if (snapshot.data == 1)
+        //return FutureBuilder(
+        // future: model.isLoggedIn(),
+        // builder: (BuildContext context, AsyncSnapshot snapshot) {
+        //if (snapshot.data == 0)
+        return SignUpView();
+        /* else if (snapshot.data == 1)
               return LoginView();
             else
-              return DashboardView();
-          },
-        );
+              return DashboardView(); */
+        //  },
+        // );
       },
       viewModelBuilder: () => ManufacturerHomeViewModel(),
     );

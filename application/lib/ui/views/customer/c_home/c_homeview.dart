@@ -1,4 +1,4 @@
-import 'package:application/ui/ui_scaling.dart';
+import 'package:application/ui/utils/ui_scaling.dart';
 import 'package:application/ui/views/customer/c_home/c_homeviewmodel.dart';
 import 'package:application/ui/widgets/search.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +12,7 @@ class CustomerHomeView extends StatefulWidget {
 class _CustomerHomeViewState extends State<CustomerHomeView> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return ViewModelBuilder.reactive(
         builder: (context, model, child) {
           return Scaffold(
