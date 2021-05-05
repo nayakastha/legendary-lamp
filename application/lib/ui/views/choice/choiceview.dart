@@ -1,4 +1,5 @@
 import 'package:application/ui/constants.dart';
+import 'package:application/ui/ui_scaling.dart';
 import 'package:application/ui/views/choice/choiceviewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -15,11 +16,14 @@ class ChoiceView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 10.0),
+                    padding: EdgeInsets.symmetric(
+                        vertical: SizeConfig.blockSizeVertical),
                     alignment: Alignment.center,
                     child: Text(
                       "Welcome! How do you want to join us?",
-                      style: TextStyle(color: secondaryColor, fontSize: 16),
+                      style: TextStyle(
+                          color: secondaryColor,
+                          fontSize: SizeConfig.blockSizeHorizontal * 5),
                     ),
                   ),
                   Row(
@@ -58,8 +62,8 @@ Widget choiceCard(
       children: [
         Container(
           color: bgColor,
-          height: MediaQuery.of(context).size.shortestSide * 0.35,
-          width: MediaQuery.of(context).size.shortestSide * 0.35,
+          height: SizeConfig.blockSizeHorizontal * 35,
+          width: SizeConfig.blockSizeHorizontal * 35,
           child: Card(
             color: Colors.white.withOpacity(0.85),
             elevation: 20,
@@ -74,13 +78,13 @@ Widget choiceCard(
           ),
         ),
         Positioned(
-          left: MediaQuery.of(context).size.shortestSide * 0.07,
-          top: MediaQuery.of(context).size.shortestSide * 0.08,
+          left: SizeConfig.blockSizeHorizontal * 7,
+          top: SizeConfig.blockSizeHorizontal * 7,
           child: Image.asset(
             asset,
             semanticLabel: name,
-            height: MediaQuery.of(context).size.shortestSide * 0.2,
-            width: MediaQuery.of(context).size.shortestSide * 0.2,
+            height: SizeConfig.blockSizeHorizontal * 20,
+            width: SizeConfig.blockSizeHorizontal * 20,
             colorBlendMode: BlendMode.dstIn,
             alignment: Alignment.center,
             errorBuilder: (BuildContext context, Object exception,

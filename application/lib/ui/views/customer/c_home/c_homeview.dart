@@ -1,3 +1,4 @@
+import 'package:application/ui/ui_scaling.dart';
 import 'package:application/ui/views/customer/c_home/c_homeviewmodel.dart';
 import 'package:application/ui/widgets/search.dart';
 import 'package:flutter/material.dart';
@@ -16,11 +17,17 @@ class _CustomerHomeViewState extends State<CustomerHomeView> {
           return Scaffold(
             resizeToAvoidBottomInset: false,
             body: SafeArea(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  SearchButton(model),
-                ],
+              child: Padding(
+                padding: EdgeInsets.all(SizeConfig.blockSizeVertical * 2),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: SearchButton(model),
+                    ),
+                  ],
+                ),
               ),
             ),
           );
