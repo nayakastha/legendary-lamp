@@ -37,7 +37,6 @@ class _SignUpViewState extends State<SignUpView> {
                 padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal * 4),
                 child: Form(
                   key: _formKey,
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -70,50 +69,53 @@ class _SignUpViewState extends State<SignUpView> {
                         height: SizeConfig.screenHeight * 0.0625,
                       ),
                       textField(
-                        _firstNameController,
-                        model,
-                        Validator.validateFirstName,
-                        "First Name",
-                        "John",
-                        false,
-                        Icons.person,
-                      ),
+                          _firstNameController,
+                          model,
+                          Validator.validateFirstName,
+                          "First Name",
+                          "John",
+                          false,
+                          Icons.person, () {
+                        setState(() {
+                          model.firstName = _firstNameController.text;
+                        });
+                      }),
                       textField(
-                        _lastNameController,
-                        model,
-                        Validator.validateLastName,
-                        "Last Name",
-                        "Doe",
-                        false,
-                        Icons.person,
-                      ),
+                          _lastNameController,
+                          model,
+                          Validator.validateLastName,
+                          "Last Name",
+                          "Doe",
+                          false,
+                          Icons.person, () {
+                        setState(() {
+                          model.lastName = _lastNameController.text;
+                        });
+                      }),
                       textField(
-                        _emailController,
-                        model,
-                        Validator.validateEmail,
-                        "Email",
-                        "foo@bar.com",
-                        false,
-                        Icons.email,
-                      ),
+                          _emailController,
+                          model,
+                          Validator.validateEmail,
+                          "Email",
+                          "foo@bar.com",
+                          false,
+                          Icons.email, () {
+                        setState(() {
+                          model.email = _emailController.text;
+                        });
+                      }),
                       textField(
-                        _passwordController,
-                        model,
-                        Validator.validatePassword,
-                        "Password",
-                        "********",
-                        true,
-                        Icons.lock_outlined,
-                      ),
-                      textField(
-                        _confirmPasswordController,
-                        model,
-                        Validator.validatePassword,
-                        "Confirm Password",
-                        "********",
-                        true,
-                        Icons.lock_outlined,
-                      ),
+                          _passwordController,
+                          model,
+                          Validator.validatePassword,
+                          "Password",
+                          "********",
+                          true,
+                          Icons.lock_outlined, () {
+                        setState(() {
+                          model.password = _passwordController.text;
+                        });
+                      }),
                     ],
                   ),
                 ),

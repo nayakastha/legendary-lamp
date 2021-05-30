@@ -11,7 +11,7 @@ Widget textField(
   String hint,
   bool obsure,
   IconData icon,
-  //Function onSave,
+  Function onSave,
 ) {
   return Padding(
     padding: EdgeInsets.symmetric(vertical: SizeConfig.blockSizeVertical),
@@ -25,7 +25,6 @@ Widget textField(
       obscureText: obsure,
       obscuringCharacter: '*',
       enableSuggestions: true,
-
       decoration: InputDecoration(
         border: new OutlineInputBorder(
           borderRadius: BorderRadius.all(
@@ -47,7 +46,7 @@ Widget textField(
         hintText: hint,
         hintStyle: const TextStyle(color: Colors.grey),
       ),
-      // onSaved: onSave,
+      onSaved: onSave,
     ),
   );
 }
